@@ -123,14 +123,29 @@ window.onclick = function(event) {
     }
 }
 /* --- HOME BUTTON LOGIC --- */
+/* --- HOME BUTTON LOGIC --- */
 function goHome() {
-    // Scroll to the top of the page smoothly
+    // 1. Scroll smoothly to the top
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
     });
     
-    // Optional: If you want to "reset" the app (clear the search results), 
-    // uncomment the line below:
-    // location.reload(); 
+    // 2. Reset the Status Text
+    document.getElementById("status-msg").innerText = "";
+
+    // 3. Reset the Card Container (Clear the found shops)
+    // We replace the results with a friendly "Ready" message
+    const container = document.getElementById("card-container");
+    container.innerHTML = `
+        <div class="card">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800');"></div>
+            <div class="card-content">
+                <span class="tag">Welcome</span>
+                <h3>Ready to search again?</h3>
+                <div class="price">---</div>
+                <p>Click the button above to find fresh spots near you.</p>
+            </div>
+        </div>
+    `;
 }
