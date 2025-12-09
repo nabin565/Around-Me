@@ -11,7 +11,7 @@
         <div class="logo">AROUND ME (This is a demo page)</div>
         <nav>
             <a href="#">Home</a>
-            <a href="#">About</a>
+           <a href="#" onclick="openAbout()">About</a>
         </nav>
     </header>
 
@@ -34,6 +34,16 @@
             </div>
         </div>
     </div>
+    <div id="about-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeAbout()">&times;</span>
+        <h2>About This Project</h2>
+        <p><strong>Around Me</Menu></strong> is a student web application designed to help Osaka Christian College students find the best food spots nearby.</p>
+        <p>It uses <strong>Geolocation</strong> to find where you are standing and the <strong>OpenStreetMap API</strong> to scan the real world for Ramen shops, Cafes, and Convenience stores.</p>
+        <br>
+        <p><em>Created by: Leba Nabin (24531) </em></p>
+    </div>
+</div>
 
     <footer>
         <p>&copy; 2025 Student Project • Powered by OpenStreetMap</p>
