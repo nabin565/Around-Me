@@ -1,4 +1,6 @@
 function findNearbyShops() {
+    // Hide the static favorites to focus on live results
+    document.getElementById("featured-section").style.display = "none";
     const status = document.getElementById("status-msg");
     const container = document.getElementById("card-container");
     
@@ -125,27 +127,19 @@ window.onclick = function(event) {
 /* --- HOME BUTTON LOGIC --- */
 /* --- HOME BUTTON LOGIC --- */
 function goHome() {
-    // 1. Scroll smoothly to the top
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
+    // 1. Scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     
-    // 2. Reset the Status Text
+    // 2. Reset Status
     document.getElementById("status-msg").innerText = "";
 
-    // 3. Reset the Card Container (Clear the found shops)
-    // We replace the results with a friendly "Ready" message
-    const container = document.getElementById("card-container");
-    container.innerHTML = `
-        <div class="card">
-            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800');"></div>
-            <div class="card-content">
-                <span class="tag">Welcome</span>
-                <h3>Ready to search again?</h3>
-                <div class="price">---</div>
-                <p>Click the button above to find fresh spots near you.</p>
-            </div>
+    // 3. Clear the Live Search results (so page isn't too long)
+    document.getElementById("card-container").innerHTML = `
+        <div class="card" style="grid-column: 1 / -1; text-align: center; padding: 40px;">
+            <h3 style="color: #bdc3c7;">Search results will appear here...</h3>
         </div>
     `;
+    
+    // 4. Make sure Featured Section is visible
+    document.getElementById("featured-section").style.display = "block";
 }
