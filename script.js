@@ -122,3 +122,15 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+/* --- HOME BUTTON LOGIC --- */
+function goHome() {
+    // Scroll to the top of the page smoothly
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+    
+    // Optional: If you want to "reset" the app (clear the search results), 
+    // uncomment the line below:
+    // location.reload(); 
+}
