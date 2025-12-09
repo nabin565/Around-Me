@@ -72,3 +72,53 @@ nav a { text-decoration: none; color: var(--dark); margin-left: 20px; font-weigh
     border-radius: 5px; font-size: 0.9rem; margin-top: 10px;
 }
 footer { background: var(--dark); color: white; text-align: center; padding: 20px; margin-top: 50px;}
+/* --- MODAL (POPUP) STYLES --- */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 2000; /* Sit on top of everything */
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+    backdrop-filter: blur(5px); /* Nice blur effect */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 30px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 500px; /* Max width for desktop */
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    animation: slideDown 0.4s;
+}
+
+.modal-content h2 {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+/* The Close Button (x) */
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+/* Animation for smooth opening */
+@keyframes slideDown {
+    from {top: -50px; opacity: 0}
+    to {top: 0; opacity: 1}
+}

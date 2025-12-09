@@ -103,3 +103,22 @@ function generateCards(shops) {
 function radiusCalc(lat, lon) {
     return "Nearby"; 
 }
+/* --- ABOUT MODAL LOGIC --- */
+
+// Open the modal
+function openAbout() {
+    document.getElementById("about-modal").style.display = "block";
+}
+
+// Close the modal
+function closeAbout() {
+    document.getElementById("about-modal").style.display = "none";
+}
+
+// Close if user clicks outside the white box
+window.onclick = function(event) {
+    const modal = document.getElementById("about-modal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
